@@ -1,0 +1,115 @@
+% !TeX encoding = UTF-8
+% !TeX root = ./main.tex
+
+\usepackage{lipsum}
+
+% margin size control
+\usepackage{geometry}
+\geometry{left=1in, right=1in, top=1in, bottom=1in}
+
+\usepackage{setspace}
+
+% figure path
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+
+% title format control
+\usepackage{titlesec}
+
+% \titleformat{\chapter}
+%     {\normalfont\Large\bfseries}{Reviewer~\thechapter}{1em}{}
+% \titlespacing{\chapter}{0pt}{0ex}{2ex}
+\newcommand{\editor}{\chapter*}
+
+\titleformat{\chapter}
+    {\normalfont\Large\bfseries}{Reviewer~\thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0ex}{2ex}
+\newcommand{\reviewer}{\chapter}
+
+\titleformat{\section}
+    {\normalfont\bfseries}{R\arabic{chapter}Q\arabic{section}}{1em}{}
+\titlespacing{\section}{0pt}{2ex}{1ex}
+% \newcommand{\question}{\section}
+
+% \titleformat{\subsection}
+%     {\normalfont\bfseries}{R\arabic{section}Q\arabic{subsection}}{1em}{}
+% \titlespacing{\subsection}{0pt}{0ex}{1ex}
+
+% change figure and table caption style
+\renewcommand\thefigure{R\thechapter-\arabic{figure}}
+\renewcommand\thetable{R\thechapter-\arabic{table}}
+% use with * to disable caption numbering inside mdframed
+\usepackage[figurename=Fig.]{caption}
+
+% change title of reference from Bibliography to Reference
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
+\renewcommand{\bibname}{References}
+
+% create new environments for question, response and ammendments
+\usepackage{mdframed}
+
+% \definecolor{AmendmentBlue}{rgb}{.3647,.5765,.8863}
+\definecolor{AmendmentBlue}{rgb}{.36,.58,.89}
+
+\global\mdfdefinestyle{basestyle}{
+    linewidth=4pt,
+    topline=false,
+    rightline=false, 
+    bottomline=false, 
+    innertopmargin=4pt,
+    innerbottommargin=4pt,
+    skipabove=5pt,
+    skipbelow=5pt
+}
+
+\newenvironment{equestion}[1]{
+    \section*{#1}
+    \begin{itshape}
+    \begin{mdframed}[style=basestyle, linecolor=red]
+}
+{
+    \end{mdframed}
+    \end{itshape}
+}
+
+\newenvironment{question}{
+    \section{}
+    \begin{itshape}
+    \begin{mdframed}[style=basestyle, linecolor=red]
+}
+{
+    \end{mdframed}
+    \end{itshape}
+}
+
+\newenvironment{amendment}[2]{
+    \begin{mdframed}[
+        style=basestyle, 
+        linecolor=AmendmentBlue
+        % frametitle={test}
+    ]
+	\textit{\textbf{Revised in Section #1 titled ``#2''}}
+    \\
+    % $\cdots$
+}
+{
+    % $\cdots$
+    \end{mdframed}
+%     \quad
+}
+
+
+% use with [H] to disable float env and allow usage of figure env inside mdframed
+\usepackage{float}
+
+\newcommand{\response}{\noindent\textbf{Response:~}}
+
+% reomove indent at beginning of a paragraph
+% \usepackage[parfill]{parskip}
+
+% make reference for each chapter
+\usepackage{chapterbib}
+
+% use smaller font for all figure captions
+\usepackage[font={small}]{caption}

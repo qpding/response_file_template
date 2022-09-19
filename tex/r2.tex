@@ -1,0 +1,48 @@
+% !TeX encoding = UTF-8
+% !TeX root = ./main.tex
+\reviewer{}
+
+\begin{question}
+\lipsum[4][1-10]
+\end{question}
+
+\response
+\lipsum[5][1-8] \cite{nguyen2021Title4}.
+The amendments are as follows:
+\begin{amendment}{SectionNum}{Title of the Section}
+\lipsum[5][11-15]
+\noindent\dots
+
+\begin{table}[H]
+	% increase table row spacing, adjust to taste
+	\renewcommand{\arraystretch}{1.0}
+	% if using array.sty, it might be a good idea to tweak the value of
+	% \extrarowheight as needed to properly center the text within the cells
+	\caption*{TABLE X \\ TABLE TITLE}
+	\label{table_ame_1}
+	\centering
+	% Some packages, such as MDW tools, offer better commands for making tables
+	% than the plain LaTeX2e tabular which is used here.
+	\begin{tabular}{c c c c}
+		\hline\hline \\ [-3mm]
+		\makecell{Item1} & \makecell{Item2} & \makecell{Item3} & \makecell{Item4} \\ [1.0ex]
+		\hline
+		A & B & C & D \\
+		E & F & G & H \\
+		\hline\hline \\ [-3mm]
+	\end{tabular}
+\end{table}
+\end{amendment}
+
+\lipsum[6][1-5]
+\begin{amendment}{SectionNum}{Title of the Section}
+\lipsum[6][6-8]
+\begin{equation*}
+	E = m c^{2}
+	\label{eqn_1}
+\end{equation*}
+\end{amendment}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
