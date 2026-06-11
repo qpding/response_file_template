@@ -39,6 +39,7 @@ beside the main `.tex` file. No TeX installation step is required. Add
 
 ### Public Interface
 
+- `\header{<article title>}{<journal name>}` creates the response-file title.
 - `\editor{<title>}` creates an unnumbered editor heading.
 - `\reviewer{}` starts the next numbered reviewer chapter.
 - `equestion` creates a named, unnumbered editor question.
