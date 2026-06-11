@@ -3,25 +3,17 @@
 % Developed by Quinn Ding at the Surgical Robotics and Devices Laboratory, CUHK.
 % Contributors: Alvin Lam, Shing Shin Cheng, Wanquan Yan
 
-\RequirePackage{etoolbox}
-\RequirePackage{l3benchmark}
-\ExplSyntaxOn
-\AfterEndDocument { \benchmark_toc: }
-\use:n
-  {
-    \ExplSyntaxOff
-    \benchmark_tic:
-  }
-
 \documentclass[12pt,a4paper]{report}
 % \author{FirstName LastName}
 
-\input{tex/preamble}
-\usepackage{xcolor}
+\usepackage{responsefile}
+\usepackage{lipsum}
 \usepackage{cite}
 \usepackage{siunitx}
 \usepackage{makecell}
 \usepackage{amsmath}
+
+\graphicspath{{./figures/}}
 
 % \title{\textbf{Response file}}
 % \date{\vspace{-5ex}}
