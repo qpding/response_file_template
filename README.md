@@ -18,8 +18,9 @@ load it after the document class:
 The reviewer's comment.
 \end{question}
 
-\response
+\begin{response}
 The author's response.
+\end{response}
 
 \begin{amendment}{2.1}{Methods}
 Text added to the revised manuscript.
@@ -44,7 +45,7 @@ beside the main `.tex` file. No TeX installation step is required. Add
 - `\reviewer{}` starts the next numbered reviewer chapter.
 - `equestion` creates a named, unnumbered editor question.
 - `question` creates a numbered reviewer question.
-- `\response` prints the response label.
+- `response` wraps an author's response and prints the response label.
 - `amendment` takes the revised section number and title as its two arguments.
 
 The `question` and `equestion` environments display comments in italics with a

@@ -96,6 +96,11 @@
     \end{mdframed}
 }
 
-\newcommand{\response}{\noindent\textbf{Response:~}}
+\newenvironment{response}{
+    \par\noindent\textbf{Response:~}\ignorespaces
+}
+{
+    \par
+}
 
 \endinput
