@@ -51,9 +51,6 @@ The `question` and `equestion` environments display comments in italics with a
 red bar. The `amendment` environment uses a blue bar. Figures and tables are
 numbered by reviewer, for example `R1-1`.
 
-Existing documents that use `\input{tex/preamble}` remain supported through a
-compatibility shim, although new documents should load the package directly.
-
 Document-specific packages and settings remain in the document preamble. For
 example, the included sample loads `lipsum` for placeholder text and defines
 its own `\graphicspath`.
