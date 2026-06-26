@@ -52,6 +52,7 @@
 
 \definecolor{ReviewerRed}{HTML}{B85C57}
 \definecolor{AmendmentBlue}{HTML}{527DA3}
+\newcommand{\amendmentfont}{\fontsize{10pt}{12pt}\selectfont}
 
 \global\mdfdefinestyle{basestyle}{
     linewidth=4pt,
@@ -89,6 +90,7 @@
         style=basestyle,
         linecolor=AmendmentBlue
     ]
+    \amendmentfont
     \textit{\textbf{Revised in Section #1 titled ``#2''}}
     \\
 }
